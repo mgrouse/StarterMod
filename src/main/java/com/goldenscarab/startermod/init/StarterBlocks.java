@@ -13,10 +13,14 @@ package com.goldenscarab.startermod.init;
 
 import com.goldenscarab.startermod.StarterMod;
 import com.goldenscarab.startermod.block.BaseBlock;
+import com.goldenscarab.startermod.block.crop.CornBlockCrop;
+import com.goldenscarab.startermod.block.pedestal.PedestalBlock;
+import com.goldenscarab.startermod.block.pedestal.PedestalTileEntity;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 
 /**
@@ -26,23 +30,28 @@ import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 @ObjectHolder(StarterMod.MODID)
 public class StarterBlocks
 {
-	public static BaseBlock ORE_COPPER = new BaseBlock(Material.ROCK, "oreCopper", "ore_copper");
+	public static BaseBlock COPPER_ORE = new BaseBlock(Material.ROCK, "copper_ore");
+	public static ItemBlock ORE_COPPER_ITEM = COPPER_ORE.createItemBlock();
 
-	public static Block[] blocks = { ORE_COPPER };
+	public static PedestalBlock PEDESTAL = new PedestalBlock();
+	public static ItemBlock PEDESTAL_ITEM = PEDESTAL.createItemBlock();
+	public static PedestalTileEntity PEDESTAL_TILE = new PedestalTileEntity();
 
-	public static ItemBlock ORE_COPPER_ITEM = (ItemBlock) new ItemBlock(ORE_COPPER)
-			.setRegistryName(ORE_COPPER.getRegistryName());
+	public static CornBlockCrop CORN_CROP = new CornBlockCrop();
 
-	public static ItemBlock[] itemBlocks = { ORE_COPPER_ITEM };
 
-	public static Block[] getBlocks()
-	{
-		return blocks;
-	}
+	public static Block[] blocks = { COPPER_ORE, CORN_CROP, PEDESTAL };
 
-	public static ItemBlock[] getItemBlocks()
-	{
-		return itemBlocks;
-	}
+
+
+	public static TileEntity[] tiles = { PEDESTAL_TILE };
+
+
+
+
+
+
+
+	public static ItemBlock[] itemBlocks = { ORE_COPPER_ITEM, PEDESTAL_ITEM };
 
 }

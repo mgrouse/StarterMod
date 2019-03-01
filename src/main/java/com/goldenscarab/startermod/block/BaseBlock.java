@@ -16,7 +16,7 @@ import com.goldenscarab.startermod.StarterMod;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemBlock;
 
 /**
  * @author Michael
@@ -25,18 +25,26 @@ import net.minecraft.creativetab.CreativeTabs;
 public class BaseBlock extends Block
 {
 
-	public BaseBlock(Material material, String unlocalizedName, String registryName)
+	public BaseBlock(Material material, String unlocalizedName)
 	{
-		this(material, SoundType.STONE, unlocalizedName, registryName);
+		this(material, SoundType.STONE, unlocalizedName);
 	}
 
-	public BaseBlock(Material material, SoundType sound, String unlocalizedName,
-			String registryName)
+	public BaseBlock(Material material, SoundType sound, String unlocalizedName)
 	{
 		super(material);
 		setUnlocalizedName(StarterMod.MODID + "." + unlocalizedName);
-		setRegistryName(registryName);
-		setCreativeTab(CreativeTabs.MISC);
+		setRegistryName(unlocalizedName);
+		setCreativeTab(StarterMod.STARTER_TAB);
 		setSoundType(sound);
+	}
+
+	public ItemBlock createItemBlock ( )
+	{
+		ItemBlock retVal = new ItemBlock(this);
+
+		retVal.setRegistryName(getRegistryName());
+
+		return retVal;
 	}
 }

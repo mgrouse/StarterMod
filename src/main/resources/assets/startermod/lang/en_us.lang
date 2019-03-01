@@ -1,3 +1,23 @@
-item.startermod.ingotCopper.name=Copper Ingot
 
-tile.startermod.oreCopper.name=Copper Ore
+itemGroup.startermod.tabStarterMod=Starter Mod
+
+item.startermod.copper_ingot.name=Copper Ingot
+
+tile.startermod.copper_ore.name=Copper Ore
+
+tile.startermod.pedestal.name=Pedestal
+
+
+item.startermod.copper_axe.name=Copper Axe
+item.startermod.copper_hoe.name=Copper Hoe
+item.startermod.copper_pickaxe.name=Copper Pickaxe
+item.startermod.copper_spade.name=Copper Spade
+item.startermod.copper_sword.name=Copper Sword
+
+item.startermod.copper_helmet.name=Copper Helmet
+item.startermod.copper_chestplate.name=Copper Chestplate
+item.startermod.copper_leggings.name=Copper Leggings
+item.startermod.copper_boots.name=Copper Boots
+
+item.startermod.corn.name=Corn
+item.startermod.corn_seed.name=Corn Seed

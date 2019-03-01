@@ -11,6 +11,7 @@
  */
 package com.goldenscarab.startermod.proxy;
 
+import net.minecraft.util.text.translation.I18n;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -41,6 +42,12 @@ public class ServerProxy implements IProxy
 	{
 		// TODO Auto-generated method stub
 		
+	}
+
+	@ Override
+	public String localize ( String unlocalized , Object ... args )
+	{
+		return I18n.translateToLocalFormatted(unlocalized, args);
 	}
 
 }

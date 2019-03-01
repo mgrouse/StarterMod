@@ -26,4 +26,7 @@ public interface IProxy
     public void init(FMLInitializationEvent event);
  
     public void postInit(FMLPostInitializationEvent event);
+
+	public String localize ( String unlocalized , Object ... args );
+
 }

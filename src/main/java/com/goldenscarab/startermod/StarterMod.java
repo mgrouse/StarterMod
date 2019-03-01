@@ -14,13 +14,18 @@ package com.goldenscarab.startermod;
 import org.apache.logging.log4j.Logger;
 
 import com.goldenscarab.startermod.proxy.IProxy;
+import com.goldenscarab.startermod.smelting.SmeltingRecipes;
+import com.goldenscarab.startermod.tabs.StarterModTab;
+import com.goldenscarab.startermod.world.StarterModWorldGen;
 
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
  * @author Michael
@@ -46,6 +51,9 @@ public class StarterMod
 	@Mod.Instance(MODID)
 	public static StarterMod instance;
 
+	public static final CreativeTabs STARTER_TAB = new StarterModTab("tabStarterMod");
+
+
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) 
 	{
@@ -62,6 +70,10 @@ public class StarterMod
 		logger.info(StarterMod.NAME + " init() ");
 		
 		proxy.init(event);
+
+		GameRegistry.registerWorldGenerator(new StarterModWorldGen(), 0);
+
+		SmeltingRecipes.init();
 	}
 
 	@EventHandler

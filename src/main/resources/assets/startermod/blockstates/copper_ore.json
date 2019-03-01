@@ -1,0 +1,12 @@
+{
+	"forge_marker": 1,
+	"defaults": 
+	{
+		"model": "startermod:copper_ore"
+	},
+	"variants": 
+	{
+		"normal": [{}],
+		"inventory": [{}]
+	}
+}

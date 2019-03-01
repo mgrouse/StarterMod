@@ -33,13 +33,13 @@ public class ModelRegistryHandler
 	public static void registerModels(ModelRegistryEvent event)
 	{
 		// first models for items
-		for (Item i : StarterItems.getItems())
+		for (Item i : StarterItems.itemArray)
 		{
 			registerModel(i);
 		}
 
 		// next models for itemBlocks
-		for (Block b : StarterBlocks.getBlocks())
+		for (Block b : StarterBlocks.blocks)
 		{
 			registerModel(Item.getItemFromBlock(b));
 		}

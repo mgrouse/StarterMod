@@ -13,7 +13,6 @@ package com.goldenscarab.startermod.item;
 
 import com.goldenscarab.startermod.StarterMod;
 
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
 /**
@@ -22,11 +21,11 @@ import net.minecraft.item.Item;
  */
 public class BaseItem extends Item
 {
-	public BaseItem(String unlocalizedName, String registryName) 
+	public BaseItem(String unlocalizedName)
 	{
 		setUnlocalizedName(StarterMod.MODID + "." + unlocalizedName);
-		setRegistryName(registryName);
-		setCreativeTab(CreativeTabs.MISC);
+		setRegistryName(unlocalizedName);
+		setCreativeTab(StarterMod.STARTER_TAB);
 	}
 
 }
